@@ -3,8 +3,8 @@ const BodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 
-const CONNECTION_URL = "mongodb+srv://oceane:password974@cluster0-0qsjo.mongodb.net/test?retryWrites=true&w=majority";
-const DATABASE_NAME = "calc";
+const CONNECTION_URL = "mongodb+srv://oceane08:password974@cluster0-owldh.mongodb.net/test?retryWrites=true&w=majority";
+const DATABASE_NAME = "calculatrice";
 
 var app = Express();
 
