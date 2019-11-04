@@ -20,9 +20,29 @@ app.listen(3000, () => {
     
 });
 
+//Route vers index.js
 const calculatrice = require('./routes/index');
 
 app.use('/', calculatrice)
+
+
+//Route vers techno.js
+const techno = require('./routes/techno');
+
+app.use('/techno',techno)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // app.get("/calculatrice/:id", (request, response) => {
@@ -33,11 +53,11 @@ app.use('/', calculatrice)
 //         response.send(result);
 //     });
 // });
-// app.get("/", (request, response) => {
+app.get("/", (request, response) => {
 
-//         response.render('calc.ejs');
+        response.render('calc.ejs');
 
-// });
-// app.post ('/', (req, res) => {
-//     res.render('/add', {titre: 'Calculatrice'})
-//   });
+});
+app.post ('/', (req, res) => {
+    res.render('/add', {titre: 'Calculatrice'})
+  });

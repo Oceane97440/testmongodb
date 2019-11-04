@@ -5,68 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Caculatrice</title>
+    <title>calculatrice</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+
+
+
+
+
 </head>
 
 <body>
-
-    <nav>
-
-            <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="techo.html">Techno</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Calculatrice</a>
-                    </li>
-            </ul>
-
-
-    </nav>
     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Menus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto nav justify-content-center ">
+              
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="techno">Techno</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Calculatrice</a>
+            </li>
+            
+          </ul>
+         
+        </div>
+      </nav>
+              
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-4" style="margin-top: 30px; text-align: center" >
+<% calculs.forEach(function(calcul) { %>
+
+                        <table class="table table-striped">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Chiffre1</th>
+                                    <th scope="col">Opérateur</th>
+                                    <th scope="col">Chiffre2</th>
+                                    <th scope="col">Résultats</th>
+
+                                  </tr>
+                                </thead>
+                                <tbody>
 
 
-    <div class="container text-center">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title"> calculatrice</div>
-            </div>
-            <div class="card-body">
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td><%= calcul.chiffre1 %></td>
+                                    <td><%= calcul.operateur %></td>
+                                    <td><%= calcul.chiffre2 %></td>
+                                    <td><%= calcul.resultats %></td>
 
-                <form action="/add" method="POST" class="form col-11" >
+                                  </tr>
+                                  
+                                  
 
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <input type="number" name="chiffre1" id="chiffre1" class="form-control m-2" >
-                            <input type="number" name="chiffre2" id="chiffre2" class="form-control m-2" >
-                        </div>
-                        <div class="col-sm-">
-                            <div class="form-check m-2">
-                                <input type="radio" name="signe" id="plus" value="+" class="form-check-input" >
-                                <label for="plus" class="form-check-label">+</label>
-                            </div>
+                                </tbody>
+                             </table> <% }); %>
+              
 
-                            <input type="submit" value="ajouter" class="btn btn-primary">
-                        </div>
-                        
-                    </div>
 
-                  
 
-                </form>
+
+
+                </div>
 
 
             </div>
 
     </div>
-      
+   
 
-  
 </body>
 
 </html>
